@@ -46,11 +46,11 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 #print(y_train)
 #print(X_test)
 
-#Feature Scaling(After the split->scaling with train+test wouls cause imformation leakage on the test set)
+#Feature Scaling(After the split->scaling with train+test would cause imformation leakage on the test set)
 #To prevent some features from dominating
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 X_train[:,3:] = sc.fit_transform(X_train[:,3:])#[:,:3]->Do not standartize the dummy variabels
 X_test[:,3:] = sc.transform(X_test[:,3:])#same scalar from train set so just transform
-print(X_train)
-print(X_test)
+#print(X_train)
+#print(X_test)
